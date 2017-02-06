@@ -6,7 +6,7 @@
  * @description
  * # programmingsiteApp
  *
- * Main module of the application.
+ * Main module of the applicatio n.
  */
 angular
   .module('programmingsiteApp', [
