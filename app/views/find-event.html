@@ -1,3 +1,31 @@
 <div class="find-event-container">
+Events
 
+
+<div class="keyword-search">
+  <a href=""><img src="images/findericon.png"><input type="text" placeholder="Type in keyword"/></a>
+</div>
+
+
+
+  <div class="toggle">
+    <input type="button" ng-click="resultsView='list'" value="list"/>
+    <input type="button" ng-click="resultsView='calendar'" value="calendar"/>
+  </div>
+
+  <div class="event-list-view" ng-show="resultsView==='list'">
+    Viewing List Results
+    <div class="event-list-item" ng-repeat="event in eventInfo">
+      <h3>{{event.name}}</h3>
+      <div>{{event.venue.name}}</div>
+    </div>
+  </div>
+
+ <!-- <ng-include src="'#/views/partials/eventList.html'"></ng-include>-->
+
+  <div class="event-calendar-view" ng-show="resultsView!='list'">
+    <div>
+      Viewing Calendar Results
+    </div>
+  </div>
 </div>

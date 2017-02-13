@@ -8,10 +8,9 @@
  * Controller of the programmingsiteApp
  */
 angular.module('programmingsiteApp')
-  .controller('FindEventCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('FindEventCtrl', function($scope, events) {
+
+    $scope.eventInfo = events.query().results;
+    $scope.resultsView = 'list';
+
   });

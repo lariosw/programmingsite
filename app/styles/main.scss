@@ -12,6 +12,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 body {
   padding: 0;
+  background-image: url("/images/keyboardpict.jpeg");
+  opacity: 0.70;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -86,19 +88,139 @@ body {
   /* Space out the masthead */
   .header {
     margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-    .lead {
-      margin-bottom: 50px;
+    .container {
+      margin-right: 0;
+
     }
   }
 }
 
-.social-links {
+
+/*my changes-non bootstrap*/
+
+.main-text {
+  color: grey;
+  margin-top: 100px;
+  .main-intro {
+    font-size: 40px;
+  }
+}
+    .definition p {
+     font-style: italic;
+      .code-picture {
+        img {
+          box-shadow: 8px 8px 3px #888888;
+        }
+      }
+    }
+
+
+.container {
+  float: right;
+  margin-right: 40px;
+}
+
+.nav-container {
+  color: white;
+  margin-left: 10px;
+  margin-top: 40px;
+ul {
+  list-style-type: none;
+  margin-left: -25px;
+    li {
+    display: block !important;
+    margin: 20px;
+    }
+  a {
+    color: inherit;
+  }
+}
+}
+
+
+.find-event-container{
+  border: 1px solid black;
+  padding: 40px;
+  background-color: darkgrey;
+  .event-list-view {
+    .event-list-item {
+      border: 1px solid black;
+      background-color: white;
+      margin-top: 20px;
+      padding: 5px;
+      border-radius: 10px;
+      text-align: center;
+    }
+  }
+}
+
+.topics-container {
+  color: blue;
+}
+
+.footer {
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  height:125px;
+  width:100%;
+  background-color: white;
+  opacity: 1.0 !important;
+  .social-links {
+    float: right;
+
+    li {
+      margin: 3px !important;
+      img {
+        width: 30px;
+        height: 30px;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.figure-container {
+  figure {
+    float: left;
+    height: 8em;
+    margin: 1.5em;
+    width: 8em;
+    -webkit-transform: perspective(500);
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: .5s;
+    img {
+      width: 8em;
+    }
+  }
+  figure:hover {
+    -webkit-transform: perspective(500) rotateX(90deg) translateY(-3em) translateZ(3em);
+  }
   img {
-    width: 30px;
-    height: 30px;
+    background-color: #222;
+    box-shadow: 0 20px 15px -10px hsla(0,0%,0%,.25);
+    display: block;
+    height: 100%;
+    -webkit-transition: .5s;
+  }
+  figure:hover img {
+    box-shadow: none;
+  }
+  figcaption {
+    background-color: #222;
+    padding: 1.5em 1.5em 1.5em .25em;
+    -webkit-transform: rotateX(-90deg);
+    -webkit-transform-origin: 100% 0;
+    -webkit-transition: .5s;
+    a {
+      color: inherit;
+      text-align: center;
+    }
+  }
+  figure:hover figcaption {
+    box-shadow: 0 20px 15px -10px hsla(0,0%,0%,.25);
+  }
+  h3 {
+    font-weight: bold;
   }
 }

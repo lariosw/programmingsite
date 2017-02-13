@@ -31,22 +31,22 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
-      .when('/Topics', {
+      .when('/topics', {
         templateUrl: 'views/topics.html',
         controller: 'TopicsCtrl',
         controllerAs: 'Topics'
       })
-      .when('/Calendar', {
+      .when('/calendar', {
         templateUrl: 'views/calendar.html',
         controller: 'CalendarCtrl',
         controllerAs: 'Calendar'
       })
-      .when('/Add-Event', {
+      .when('/add-event', {
         templateUrl: 'views/add-event.html',
         controller: 'AddEventCtrl',
         controllerAs: 'AddEvent'
       })
-      .when('/Find-Event', {
+      .when('/find-event', {
         templateUrl: 'views/find-event.html',
         controller: 'FindEventCtrl',
         controllerAs: 'FindEvent'
