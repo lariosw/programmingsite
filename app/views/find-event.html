@@ -1,24 +1,29 @@
 <div class="find-event-container">
-Events
+<h1>Events</h1>
 
+  <div class="row search-nav-container">
+    <div class="search keyword-search col-xs-12 col-sm-12 col-md-4">
+      <p>Search for events by keyword:</p>
+      <a href=""><img src="images/findericon.png"><input type="text" placeholder="Type in keyword"/></a>
+    </div>
 
-<div class="keyword-search">
-  <a href=""><img src="images/findericon.png"><input type="text" placeholder="Type in keyword"/></a>
-</div>
+    <div class="search date-range col-xs-12 col-sm-12 col-md-4">
+      <p>Select date range:</p>
+    </div>
 
-
-
-  <div class="toggle">
+  <div class=“toggle col-xs-12 col-sm-12 col-md-4>
     <input type="button" ng-click="resultsView='list'" value="list"/>
     <input type="button" ng-click="resultsView='calendar'" value="calendar"/>
   </div>
 
-  <div class="event-list-view" ng-show="resultsView==='list'">
-    Viewing List Results
+  <div class="event-list-view col-xs-12 col-sm-12 col-md-4" ng-show="resultsView==='list'">
+    <p>DATA GOES HERE IN LIST VIEW</p>
     <div class="event-list-item" ng-repeat="event in eventInfo">
       <h3>{{event.name}}</h3>
       <div>{{event.venue.name}}</div>
     </div>
+  </div>
+</div>
   </div>
 
  <!-- <ng-include src="'#/views/partials/eventList.html'"></ng-include>-->

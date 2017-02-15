@@ -142,6 +142,12 @@ ul {
   border: 1px solid black;
   padding: 40px;
   background-color: darkgrey;
+  h1 {
+    width: 100px;
+    margin: 0 auto;
+  }
+  .search-nav-container {
+    margin-top: 20px;
   .event-list-view {
     .event-list-item {
       border: 1px solid black;
@@ -151,6 +157,7 @@ ul {
       border-radius: 10px;
       text-align: center;
     }
+  }
   }
 }
 
