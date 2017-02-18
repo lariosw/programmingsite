@@ -19,51 +19,20 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <!--<div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <a class="navbar-brand" href="#!/"> {Code:Life Hub}</a></br>
-        <div class="container">
-          <div class="navbar-header">
-
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-
-            </button>
-
-
-          </div>
-
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#!/">Home</a></li>
-              <li><a ng-href="#!/topics">Topics</a></li>
-              <li><a ng-href="#!/calendar">Calendar</a></li>
-              <li><a ng-href="#!/find-event">Events</a></li>
-              <li><a ng-href="#!/find-event"><img src="images/findericon.png"><input type="text" placeholder="Type in keyword"/></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    -->
-
-    <div class="container">
-      <div ng-view=""></div>
-    </div>
-
     <div class="nav-container">
       <h4>{Code:Life Hub}</h4>
+      <ul class="side-nav">
+        <li class=""><a href="#!/">Home</a></li>
+        <li><a ng-href="#!/topics">Topics</a></li>
+        <li><a ng-href="#!/find-event">Events</a></li>
+        <li><a ng-href="#!/about">Contact Us</a></li>
 
-    <ul class="side-nav">
-      <li class=""><a href="#!/">Home</a></li>
-      <li><a ng-href="#!/topics">Topics</a></li>
-      <li><a ng-href="#!/find-event">Events</a></li>
-      <li><a ng-href="#!/about">Contact Us</a></li>
-      <!--<li><a ng-href="#!/find-event"><img src="images/findericon.png"><input type="text" placeholder="Type in keyword"/></a></li> !-->
-    </ul>
+      </ul>
+    </div>
 
-
+    <div class="page-content">
+      <div ng-view=""></div>
+    </div>
 
     <div class="footer">
       <div class="container">
@@ -72,13 +41,13 @@
           <a href="http://wwww.whitneylarios.com/">www.whitneylarios.com</a>
           </div>
 
-        <div class="social-links">
+        <!-- <div class="social-links">
           <ul>
             <li><img alt="facebook" src="images/facebookIcon.jpg"></li>
             <li><img alt="twitter" src="images/twitter.png"></li>
             <li><a href="https://www.meetup.com/"><img alt="meetup" src="images/meetupicon.png"></a></li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -110,15 +79,15 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/topics.js"></script>
-        <script src="scripts/controllers/calendar.js"></script>
-        <script src="scripts/controllers/add-event.js"></script>
-        <script src="scripts/controllers/find-event.js"></script>
-        <script src="scripts/services/events.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/topics.js"></script>
+    <script src="scripts/controllers/calendar.js"></script>
+    <script src="scripts/controllers/add-event.js"></script>
+    <script src="scripts/controllers/find-event.js"></script>
+    <script src="scripts/services/events.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

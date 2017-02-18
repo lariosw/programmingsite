@@ -19,7 +19,8 @@ angular
     'ngSanitize',
     'ngTouch'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, $sceDelegateProvider) {
+    /* configure routes */
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -54,4 +55,13 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+
+    /* configure url whitelist */
+    $sceDelegateProvider.resourceUrlWhitelist([
+      // Allow same origin resource loads.
+      'self',
+      // Allow loading from our assets domain.  Using **  to allow anything from the api route.
+      'https://api.meetup.com/**'
+    ]);
+
   });

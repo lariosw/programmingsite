@@ -1,38 +1,15 @@
 'use strict';
 
-
-
-
 angular.module('programmingsiteApp')
- .factory('events', function ($resource) {
- // Service logic
- // ...fdsf
-  var meetupApiUrl = 'https://api.meetup.com/2/events?key=16576831b2f2322486f53406b2e5d3a&group_urlname=ny-tech&sign=true';
+ .factory('events', function ($http) {
+   var meetupApiUrl = 'https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_id=19231622%2C1619342%2C1668861&page=200&fields=&order=time&desc=false&status=upcoming&sig_id=12632201&sig=91855a6021f22524d081740410ee4324adf204be';
 
-   //WITH JSONP
- return $resource(meetupApiUrl, {
-
-   callback: 'JSON_CALLBACK',
- }, {
-   query: {
-     method: 'JSONP',
-     params:{
-     },
-     isArray: true
-   }
- });
-
-   // DEFAUlT GET
-   /*return $resource(meetupApiUrl, {}, {
-     query: {
-       methods: 'GET',
-       params:{
-         groupIDs: '19231622,1619342,1668861' //ChickTech-Seattle-Meetup,SeattleJS,SeattleTechInterviews
-       },
-       isArray: false
+   return {
+     query: function(){
+       //returns httpPromise
+       return $http.jsonp(meetupApiUrl);
      }
-   });*/
-
+   };
  });
 
 
