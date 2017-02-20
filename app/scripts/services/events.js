@@ -3,11 +3,12 @@
 angular.module('programmingsiteApp')
  .factory('events', function ($http) {
    var meetupApiUrl = 'https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_id=19231622%2C1619342%2C1668861&page=200&fields=&order=time&desc=false&status=upcoming&sig_id=12632201&sig=91855a6021f22524d081740410ee4324adf204be';
-
+  //used signed url to not expose the api key
    return {
      query: function(){
        //returns httpPromise
        return $http.jsonp(meetupApiUrl);
+       //used jsonp to solve problem with access denial error given due to CORS issue
      }
    };
  });
@@ -23,6 +24,8 @@ angular.module('programmingsiteApp')
  * # events
  * Factory in the programmingsiteApp.
  */
+
+//for testing purposes, hardcoded events
 angular.module('programmingsiteApp')
   .factory('eventsMock', function () {
     // Service logic
