@@ -104,10 +104,6 @@ body {
 .main-text {
   color: grey;
   margin-top: 20px;
-  .figure-container {
-    height: 200px;
-  }
-
   .main-intro {
     font-size: 40px;
   }
@@ -317,6 +313,7 @@ clear: both;
 
 
 .figure-container {
+  height: 400px;
   figure {
     float: left;
     height: 8em;
