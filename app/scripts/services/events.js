@@ -2,7 +2,7 @@
 
 angular.module('programmingsiteApp')
  .factory('events', function ($http) {
-   var meetupApiUrl = 'https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_id=19231622%2C1619342%2C1668861&page=200&fields=&order=time&desc=false&status=upcoming&sig_id=12632201&sig=91855a6021f22524d081740410ee4324adf204be';
+   var meetupApiUrl = 'https://api.meetup.com/2/events?offset=0&format=json&limited_events=False&group_id=19231622%2C1619342%2C1668861%2C18612025%2C8242402%2C18693898%2C7208692%2C503295%2C3258152%2C20172266%2C19459926%2C18359380%2C14870552%2C7658792%2C2826392&page=200&fields=&order=time&desc=false&status=upcoming&sig_id=12632201&sig=cde92108687e45e4d9bc79d821b5975385261eeb';
   //used signed url to not expose the api key
    return {
      query: function(){

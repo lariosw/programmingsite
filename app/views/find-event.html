@@ -4,9 +4,13 @@
     </div>
 
   <div class="row search-nav-container">
+
     <div class="search keyword-search">
-      <p>Search for events by keyword:</p>
-      <a href=""><img src="images/findericon.png"><input type="text" placeholder="Type in keyword"/></a>
+      <form action="">
+        Search for events by keyword:<br>
+        <input type="text" name="search" value="" placeholder="Keyword Search.."><br>
+        <input type="submit" value="Submit">
+      </form>
     </div>
 
     <div class="search date-range">
@@ -21,7 +25,13 @@
   <div class="event-list-view" ng-show="resultsView==='list'">
     <div class="event-list-item" ng-repeat="event in eventInfo">
       <h3>{{event.name}}</h3>
+      <div>{{event.time}}</div>
+      <div>{{event.group.name}}</div>
       <div>{{event.venue.name}}</div>
+      <div>{{event.description}}</div>
+      <div>{{event.venue.address_1}}</div>
+      <div>{{event.venue.city}}</div>
+      <div>{{event.event_url}}</div>
     </div>
   </div>
 </div>
