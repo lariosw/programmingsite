@@ -201,7 +201,7 @@ $break-small: 480px;
 }
 
 .page-content {
-clear: both;
+//clear: both;
 }
 
 .footer {
@@ -259,6 +259,25 @@ clear: both;
       border-radius: 10px;
       text-align: center;
       box-shadow: 5px 5px 2px #888888;
+    }
+    .event-description {
+      background-color: lightblue;
+    }
+    .toggleWrapper {
+      .toggleButtonWrapper {
+        text-align: center;
+        margin-top: 15px;
+      }
+      .toggleShowButton, .toggleHideButton {
+        display: inline-block;
+      }
+      .toggleHideButton {
+        display: none;
+      }
+
+      .toggleContent {
+        display: none;
+      }
     }
   }
 }

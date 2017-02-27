@@ -8,8 +8,8 @@
     <div class="search keyword-search">
       <form action="">
         Search for events by keyword:<br>
-        <input type="text" name="search" value="" placeholder="Keyword Search.."><br>
-        <input type="submit" value="Submit">
+        <input type="text" name="search" ng-model="searchKeyword" placeholder="Keyword Search.."><br>
+        <input type="submit" ng-click="search()" value="Submit">
       </form>
     </div>
 
@@ -23,17 +23,26 @@
   </div>
 
   <div class="event-list-view" ng-show="resultsView==='list'">
-    <div class="event-list-item" ng-repeat="event in eventInfo">
+    <div class="event-list-item" ng-repeat="event in filteredEvents">
       <h3>{{event.name}}</h3>
-      <div>{{event.time}}</div>
-      <div>{{event.group.name}}</div>
-      <div>{{event.venue.name}}</div>
-      <div>{{event.description}}</div>
+      <h4>{{event.group.name}}</h4>
+      <div ng-init="myURL=event.event_url">
+        <a ng-href="{{myURL}}">{{myURL}}</a>
+      </div>
+      <strong><div>{{event.venue.name}}</div></strong>
       <div>{{event.venue.address_1}}</div>
-      <div>{{event.venue.city}}</div>
-      <div>{{event.event_url}}</div>
+      <div>{{event.venue.city}}</div><br>
+      <div>{{event.time}}</div>
+        <div class="event-description">
+          <div ng-app="myApp" ng controller="find-events">
+            <p ng-bind-html="event.description"></p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
+
 </div>
   </div>
 

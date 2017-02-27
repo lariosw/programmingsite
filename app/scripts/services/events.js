@@ -13,8 +13,17 @@ angular.module('programmingsiteApp')
    };
  });
 
+/*angular.module('bindHTML',['ngSanitize'])
+  .controller('find-events', ['$scope', function($scope) {
+   $scope.myHTML =
+    "events.description";
+  }]); */
 
 
+/*var app = angular.module("myApp", ['ngSanitize']);
+app.controller("myCtrl", function($scope) {
+  $scope.myText = "{{event.description}}";
+});*/
 
 
 /**
