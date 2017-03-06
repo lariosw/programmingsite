@@ -432,6 +432,8 @@ $break-small: 480px;
   }
 }
 
-.calendar-container{
-  background: white;
+.calendar-section{
+  .calendar-wrapper {
+    background: white;
+  }
 }
