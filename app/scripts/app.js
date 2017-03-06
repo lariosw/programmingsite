@@ -17,8 +17,12 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    '720kb.datepicker',
+    'mwl.calendar',
+    'ui.bootstrap'
   ])
+
   .config(function ($routeProvider, $sceDelegateProvider) {
     /* configure routes */
     $routeProvider
@@ -63,5 +67,6 @@ angular
       // Allow loading from our assets domain.  Using **  to allow anything from the api route.
       'https://api.meetup.com/**'
     ]);
+
 
   });

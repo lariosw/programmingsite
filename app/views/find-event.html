@@ -1,28 +1,26 @@
 <div class="find-event-container">
-    <div class="event-header">
-      <img src="images/find_background.jpg" class="search_pict">
-    </div>
+  <div class="event-header">
+    <img src="images/find_background.jpg" class="search_pict">
+  </div>
 
   <div class="row search-nav-container">
 
     <div class="search keyword-search">
-      <form action="">
-        Search for events by keyword:<br>
-        <input type="text" name="search" ng-model="searchKeyword" placeholder="Keyword Search.."><br>
-        <input type="submit" ng-click="search()" value="Submit">
-      </form>
+        <span>Search for events:</span><br>
+        <input type="text" ng-model="searchKeyword" placeholder="Keyword.."><br>
     </div>
 
-    <div class="search date-range">
-      <p>Select date range:</p>
+    <div class="date-search">
+      <datepicker  date-format="MM-dd-yyyy"  datepicker-mobile="false">
+        <input ng-model="searchEventDate" placeholder="Date.." type="text" readonly/>
+      </datepicker>
     </div>
 
-  <div class=“toggle">
-    <input type="button" ng-click="resultsView='list'" value="list"/>
-    <input type="button" ng-click="resultsView='calendar'" value="calendar"/>
+    <input type="button" ng-click="search()" value="Submit">
+    <input ng-show="activeSearchKeyword || activeSearchEventDate" type="button" ng-click="clearSearch()" value="Clear">
   </div>
 
-  <div class="event-list-view" ng-show="resultsView==='list'">
+  <div class="event-list-view">
     <div class="event-list-item" ng-repeat="event in filteredEvents">
       <h3>{{event.name}}</h3>
       <h4>{{event.group.name}}</h4>
@@ -32,25 +30,18 @@
       <strong><div>{{event.venue.name}}</div></strong>
       <div>{{event.venue.address_1}}</div>
       <div>{{event.venue.city}}</div><br>
-      <div>{{event.time}}</div>
-        <div class="event-description">
-          <div ng-app="myApp" ng controller="find-events">
-            <p ng-bind-html="event.description"></p>
+      <div>{{event.time | date:'MMM d, y h:mm a'}}</div>
+
+      <div class="event-description">
+        <div ng-app="myApp" ng controller="find-events">
+
+          Description <input type="checkbox" ng-model="description">
+          <div ng-show="description">
+            <h5 ng-bind-html="event.description"></h5>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
-</div>
-  </div>
-
- <!-- <ng-include src="'#/views/partials/eventList.html'"></ng-include>-->
-
-  <div class="event-calendar-view" ng-show="resultsView!='list'">
-    <div>
-      Viewing Calendar Results
-    </div>
-  </div>
 </div>

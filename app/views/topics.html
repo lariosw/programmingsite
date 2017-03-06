@@ -1,34 +1,33 @@
 <div class="topics-container">
   <div class="topics-header">
+    <div class="title">Tech News</div>
     <img src="images/topics_background.jpg" class="topics-header-pict">
     </div>
     <div class="topics-keyword-search">
-      <div class="keyword-box">
-      <a href=""><img src="images/findericon.png"><input type="text" placeholder="Type in keyword"/></a>
+      <div class="search keyword-box">
+        <p>Search by keyword for tech news your interested in on Tech Crunch:</p>
+        <div class="search keyword-search">
+          <form action="">
+            <input type="text" name="search" ng-model="articlesKeyword" placeholder="Keyword Search.."><br>
+            <input type="button" ng-click="search()" value="Submit">
+          </form>
         </div>
-      <h2>TOPICS</h2>
+      </div>
     </div>
 
     <div class="row post-container">
-      <div class="article post1 col-xs-12 col-sm-6">
-jkjkjkjk
-      </div>
-      <div class="article post2 col-xs-12 col-sm-6">
-klkl;kkl;k;lk;
-      </div>
-      <div class="article post3 col-xs-12 col-sm-6">
-kl;kl;kl;
-      </div>
-      <div class="article post4 col-xs-12 col-sm-6">
-kl;klkplo
-      </div>
-      <div class="article post5 col-xs-12 col-sm-6">
-mll;k;lk
-      </div>
-      <div class="article post6 col-xs-12 col-sm-6">
-mljlkjkl
-      </div>
+
+  <div class="article col-xs-12 col-sm-6" ng-repeat="article in filteredArticles">
+    <h4 class="article-title">{{article.title}} <br></h4>
+    <div class="article-author"> By {{article.author}} <br> </div>
+    <div class="article-img"><img ng-src="{{article.urlToImage}}"/></div>
+    <div class="article-description">{{article.description}}
+      <div ng-init="topicUrl=article.url">
+      <a ng-href="{{topicUrl}}" target="_blank">Read More</a></div>
     </div>
+
+
+  </div>
 
   </div>
   <div class="blog-container">

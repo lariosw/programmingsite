@@ -12,6 +12,10 @@
 
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angularjs-datepicker/dist/angular-datepicker.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-bootstrap-calendar/dist/css/angular-bootstrap-calendar.css" />
+
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -25,6 +29,47 @@
 
     <div class="nav-container">
       <h4>{Code:Life Hub}</h4>
+     <!-- <div class="main-intro"> {Code:Life Hub} </div> !-->
+      <div class="definition">
+        <p>noun</p>
+      </div>
+      <p class="lead"> the place where programmers can go to get local events and keep up to date with articles
+        about specific coding topics. HTML to AngularJS...we will help you find events or articles about the language or
+        framework you love.
+      </p>
+
+      <div class="figure-container">
+        <figure>
+          <img src="images/codeicon.jpg" alt="code">
+          <figcaption>
+            <a href="#!/add-event"><h3>Add Event</h3></a>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/magnifyingglass.jpg" alt="find-an-item">
+          <figcaption>
+            <a  href="#!/find-event"><h3>Find Events</h3></a>
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/calendarpicture.jpg" alt="calendar">
+          <figcaption>
+            <a  href="#!/calendar"><h3>Calendar</h3></a>
+
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img src="images/articlepicture.jpeg" alt="topics">
+          <figcaption>
+            <a href="#!/topics"><h3>Topics</h3></a>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+      <div class="side-nav-container">
       <ul class="side-nav">
         <li class=""><a href="#!/">Home</a></li>
         <li><a ng-href="#!/topics">Topics</a></li>
@@ -80,6 +125,9 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angularjs-datepicker/dist/angular-datepicker.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-bootstrap-calendar/dist/js/angular-bootstrap-calendar-tpls.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -92,6 +140,7 @@
     <script src="scripts/controllers/add-event.js"></script>
     <script src="scripts/controllers/find-event.js"></script>
     <script src="scripts/services/events.js"></script>
+    <script src="scripts/services/news.js"></script>
     <!-- endbuild -->
 </body>
 </html>

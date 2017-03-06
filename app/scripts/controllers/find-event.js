@@ -12,9 +12,10 @@ angular.module('programmingsiteApp')
     //scope defaults
     $scope.searchKeyword ="";
     $scope.eventResults =[];
-    $scope.filteredEvents=[];
-    $scope.searchEventDate="";
-    $scope.resultsView = 'list';
+    $scope.filteredEvents =[];
+    $scope.searchEventDate = "";
+    $scope.activeSearchKeyword = "";
+    $scope.activeSearchEventDate = "";
 
     //call meetup api and get events
     events.query().then(function(response){
@@ -24,16 +25,20 @@ angular.module('programmingsiteApp')
         $scope.filteredEvents = $scope.eventResults;
       }
       else{
-        //there was an error do some error handling
+        window.alert('there was an error');
+        //todo: there was an error do some error handling
       }
+    }, function(err){
+      window.alert('there was an error: ' + err);
+      //todo: there was an error do some error handling
     });
 
     //handle search
     $scope.search = function(){
-      debugger;
       var results=[];
       if(!$scope.searchKeyword && !$scope.searchEventDate){
         window.alert('Please add keyword or date one is required');
+        //todo: replace this with modal
         return;
       }
 
@@ -47,6 +52,16 @@ angular.module('programmingsiteApp')
         }
       }
       $scope.filteredEvents = results;
+      $scope.activeSearchKeyword = $scope.searchKeyword;
+      $scope.activeSearchEventDate = $scope.searchEventDate;
+    };
+
+    $scope.clearSearch = function(){
+      $scope.filteredEvents = $scope.eventResults;
+      $scope.searchKeyword = "";
+      $scope.activeSearchKeyword = "";
+      $scope.searchEventDate = "";
+      $scope.activeSearchEventDate = "";
     };
 
     function doesEventMatchKeywords(event, keyword){
@@ -67,24 +82,28 @@ angular.module('programmingsiteApp')
     }
 
     function doesEventMatchDate(event, date){
-      /*if(date){
+      //convert dates to date objects and set hour to 0 so that only date part is compared
+      var searchDate = new Date(date);
+      searchDate.setHours(0, 0, 0, 0);
+      var eventDate = new Date(event.time);
+      eventDate.setHours(0, 0, 0, 0);
 
-      }*/
-      return true;
+      //compare the string of representation of each date
+      if(searchDate.toString() === eventDate.toString()) {
+        return true;
+      }
+      else {
+        return false;
+      }
     }
 
 
-
-    var app = angular.module ("myApp", ['ngSanitize']);
+    //make HTML render from Json
+    /*var app = angular.module ("myApp", ['ngSanitize']);
     app.controller("find-events", function ($scope, events){
       $scope.myHTML =
         events.description;
-    });
-
-    /*moment(events.time).format('MMMM Do YYYY, h:mm:ss a');*/
-
-
-
+    });*/
 
 
   });

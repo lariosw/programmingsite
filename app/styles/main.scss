@@ -141,7 +141,7 @@ body {
 
 $break-large: 918px;
 .page-content {
-  margin: 0 auto;
+  margin: 100px auto;
   max-width: 640px;
   width: 100%;
   @media screen and (max-width: $break-large) {
@@ -160,12 +160,22 @@ $break-large: 918px;
 }
 
 /* EnD of footer code ********* */
-
+.nav-container {
+  width: 200px;
+  h4 {
+  }
+  .lead {
+    font-size: 10px;
+  }
+}
 
 $break-small: 480px;
 .nav-container {
   color: lightgray;
   font-family: monospace;
+  h4 {
+    margin-left: 20px;
+  }
   @media screen and (max-width: $break-small) {
     background-color: dimgrey;
     color: black;
@@ -186,12 +196,14 @@ $break-small: 480px;
   ul {
     list-style-type: none;
     margin-left: -25px;
+    float: right;
       li {
-      display: block;
+      display: inline;
       margin: 20px;
         @media screen and (max-width: $break-small) {
           display: inline;
           margin: 15px;
+          float: none;
         }
       }
     a {
@@ -261,7 +273,7 @@ $break-small: 480px;
       box-shadow: 5px 5px 2px #888888;
     }
     .event-description {
-      background-color: lightblue;
+
     }
     .toggleWrapper {
       .toggleButtonWrapper {
@@ -285,25 +297,56 @@ $break-small: 480px;
 .topics-container {
   margin-top: -64px;
   margin-left: 10px;
- width: 100%;
-  .keyword-box {
-    float: right;
+  width: 100%;
+  p {
+    width: 450px !important;
   }
-  h2 {
-    margin-left: 10px;
+  .title {
+    font-size: 75px;
+    width:600px;
+    margin: 0 auto;
+    @media screen and (max-width: $break-small) {
+      font-size: 50px;
+    }
   }
   .topics {
     width: 100%;
+  }
+  .topics-keyword-search {
+    .keyword-box {
+      width: 40px;
+    }
   }
   .topics-header img {
     height: 250px;
     width: 100%;
   }
   .post-container {
-    div {
-     color: white;
+    div.article {
+     color: yellow;
       border: 2px solid white;
-      height: 300px;
+      padding-bottom: 10px;
+      .article-title {
+        text-align: center;
+      }
+      .article-author{
+        text-align: center;
+      }
+      .article-description {
+        text-align: center;
+        margin-top: 5px;
+      }
+      .article-img {
+        height:100px;
+        position:relative;
+        left:50%;
+
+        img {
+          height: 100%;
+          position:relative;
+          left:-25%;
+        }
+      }
     }
   }
 }
