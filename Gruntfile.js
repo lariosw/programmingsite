@@ -86,10 +86,10 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9013,
+        port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
-        livereload: 35719
+        livereload: 35720
       },
       livereload: {
         options: {
@@ -289,7 +289,7 @@ module.exports = function (grunt) {
           html: {
             steps: {
               js: ['concat', 'uglifyjs'],
-              //css: ['cssmin']
+              css: ['cssmin']
             },
             post: {}
           }
@@ -318,27 +318,27 @@ module.exports = function (grunt) {
     // By default, your `index.html`'s <!-- Usemin block --> will take care of
     // minification. These next options are pre-configured if you do not wish
     // to use the Usemin blocks.
-     cssmin: {
-     dist: {
-       files: {
-       '<%= yeoman.dist %>/styles/main.css': [
-       '.tmp/styles/{,*/}*.css'
-        ]
-       }
-      }
-     },
-     uglify: {
-       dist: {
-         files: {
-           '<%= yeoman.dist %>/scripts/scripts.js': [
-             '<%= yeoman.dist %>/scripts/scripts.js'
-           ]
-         }
-       }
-     },
-     concat: {
-       dist: {}
-     },
+    //  cssmin: {
+    //  dist: {
+    //    files: {
+    //    '<%= yeoman.dist %>/styles/main.css': [
+    //    '.tmp/styles/{,*/}*.css'
+    //     ]
+    //    }
+    //   }
+    //  },
+    //  uglify: {
+    //    dist: {
+    //      files: {
+    //        '<%= yeoman.dist %>/scripts/scripts.js': [
+    //          '<%= yeoman.dist %>/scripts/scripts.js'
+    //        ]
+    //      }
+    //    }
+    //  },
+    //  concat: {
+    //    dist: {}
+    //  },
 
     imagemin: {
       dist: {
