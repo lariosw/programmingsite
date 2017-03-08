@@ -8,14 +8,56 @@
  * Controller of the programmingsiteApp
  */
 angular.module('programmingsiteApp')
-  .controller('CalendarCtrl', function ($scope) {
+  .controller('CalendarCtrl', function ($scope, events) {
+    //calendar config defaults
     $scope.calendarState = {
       calendarView : "month",
       currentDate : new Date(),
       events: []
     };
 
+    //request events
+    //call meetup api and get events
+    events.query().then(function(response){
+      //using .then -- promise, with asyncronous calls
+      if(response && response.data && response.data.results) {
+        var meetupEvents = response.data.results;
+        var mappedEvents = translateEvents(meetupEvents);
+        $scope.calendarState.events = mappedEvents;
+      }
+      else{
+        window.alert('there was an error');
+        //todo: there was an error do some error handling
+      }
+    }, function(err){
+      window.alert('there was an error: ' + err);
+      //todo: there was an error do some error handling
+    });
+
+
+    //takes meetup events and restructures them to match structure required by calendar
+    function translateEvents(muEvents){
+      var formattedEvents = [];
+      var i;
+      for (i=0; i < muEvents.length; i++) {
+        //repeat this for each event in muEvents
+        var newEvent = {
+          title: muEvents[i].name,
+          startsAt: new Date(muEvents[i].time),
+          endsAt: new Date(muEvents[i].time)
+        };
+        formattedEvents.push(newEvent);
+        //end repeat
+      }
+
+
+      return formattedEvents;
+    }
   });
+
+
+
+
 /*
     $scope.events = [
       {
@@ -71,4 +113,5 @@ angular.module('programmingsiteApp')
 
       }]);
   });
+
 */

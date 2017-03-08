@@ -1,31 +1,39 @@
 <div class="find-event-container">
-  <div class="event-header">
-    <img src="images/find_background.jpg" class="search_pict">
-  </div>
 
-  <div class="row search-nav-container">
+  <div class=" search-nav-container">
+    <div class="row search keyword-search">
+      <h2 class="events-title">Events</h2>
+      <div class="keyword-input-box col-xs-12 col-sm-12 col-md-4">
+      <span>Search for events by keyword :</span><br>
+      <input type="text" ng-model="searchKeyword" placeholder="Keyword.."><br>
+      </div>
 
-    <div class="search keyword-search">
-        <span>Search for events:</span><br>
-        <input type="text" ng-model="searchKeyword" placeholder="Keyword.."><br>
+      <div class="date-search col-xs-12 col-sm-12 col-md-4">
+        <span>Search for events by date:</span><br>
+        <datepicker class="datepicker-box" date-format="MM-dd-yyyy"  datepicker-mobile="false">
+          <input ng-model="searchEventDate" placeholder="Date.." type="text" readonly/>
+        </datepicker>
+      </div>
+      <div  class="search-submit-btn col-xs-12 col-sm-12 col-md-4">
+        <input type="button" ng-click="search()" value="Submit">
+      </div>
     </div>
 
-    <div class="date-search">
-      <datepicker  date-format="MM-dd-yyyy"  datepicker-mobile="false">
-        <input ng-model="searchEventDate" placeholder="Date.." type="text" readonly/>
-      </datepicker>
-    </div>
 
-    <input type="button" ng-click="search()" value="Submit">
     <input ng-show="activeSearchKeyword || activeSearchEventDate" type="button" ng-click="clearSearch()" value="Clear">
+    <div class="results-cnt" ng-if="activeSearchKeyword || activeSearchEventDate">
+      <p class="lead lead-found">{{filteredEvents.length}} events found matching the search: {{activeSearchKeyword || activeSearchEventDate}}.</p>
+    </div>
   </div>
 
-  <div class="event-list-view">
-    <div class="event-list-item" ng-repeat="event in filteredEvents">
-      <h3>{{event.name}}</h3>
-      <h4>{{event.group.name}}</h4>
+
+
+  <div class="row event-list-view">
+    <div class="event-list-item col-xs-12 col-sm-6 col-md-4" ng-repeat="event in filteredEvents">
+      <h4>{{event.name}}</h4>
+      <h5>{{event.group.name}}</h5>
       <div ng-init="myURL=event.event_url">
-        <a ng-href="{{myURL}}">{{myURL}}</a>
+        <a ng-href="{{myURL}}">View Event</a>
       </div>
       <strong><div>{{event.venue.name}}</div></strong>
       <div>{{event.venue.address_1}}</div>
