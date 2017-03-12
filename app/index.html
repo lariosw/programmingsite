@@ -26,20 +26,21 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="nav-container">
-      <h4>{Code:Life Hub}</h4>
-    </div>
-      <div class="side-nav-container">
-        <ul class="side-nav">
-          <li class=""><a href="#!/">Home</a></li>
-          <li><a ng-href="#!/topics">Topics</a></li>
-          <li><a ng-href="#!/find-event">Events</a></li>
-          <li><a ng-href="#!/calendar">Calendar</a></li>
-          <li><a ng-href="#!/about">Contact Us</a></li>
+      <!-- <div class="side-nav-container"> !-->
+    <div class="navbar-content">
+        <ul class="side-nav social-list">
+          <li class="title-nav">{Code:Life Hub}</li>
+          <li class="nav-element home-nav"><a href="#!/">Home</a></li>
+          <li class="nav-element"><a ng-href="#!/topics">Topics</a></li>
+          <li class="nav-element"><a ng-href="#!/find-event">Events</a></li>
+          <li class="nav-element"><a ng-href="#!/calendar">Calendar</a></li>
+          <li class="nav-element contact-nav"><a ng-href="#!/about">Contact Us</a></li>
+          <li class="nav-element social-icon"><a ng-href="https://www.meetup.com/members/12632201/" target="_blank"><img src="images/meetupicon.png" class="meetup-icon"></a></li>
+          <li class="nav-element social-icon"><a ng-href="https://www.linkedin.com/in/whitney-larios-5b762011a?trk=nav_responsive_tab_profile_pic"  target="_blank"><img src="images/linkedin.png" class="linkedin-icon"></a></li>
+          <li class="nav-element social-icon"><a ng-href="https://twitter.com/lariosw_23" target="_blank"><img src="images/twitter.png" class="twitter-icon"></a></li>
+          <li class="nav-element social-icon"><a ng-href="https://github.com/lariosw" target="_blank"><img src="images/Octocat.png" class="github-icon"></a></li>
         </ul>
-
     </div>
-     <!-- <div class="main-intro"> {Code:Life Hub} </div> !-->
 
     <div class="page-content">
       <div ng-view=""></div>
@@ -47,10 +48,33 @@
 
     <div class="footer">
       <div class="container">
-        <div class="footer-content">
-          <h3>Designed and developed by Whitney Larios.</h3>
-          <a href="http://wwww.whitneylarios.com/">www.whitneylarios.com</a>
+        <div class="row footer-content">
+
+          <div class="row footer-content1 col-xs-12 col-sm-4">
+              <a class="topics-footer-nav col-xs-6"  ng-href="#!/topics">Topics</a></li>
+              <a class="event-footer-nav col-xs-6"  ng-href="#!/find-event">Events</a></li>
+              <a class="calendar-footer-nav col-xs-6"  ng-href="#!/calendar">Calendar</a></li>
+              <a class="contact-footer-nav col-xs-6"  ng-href="#!/about">Contact Us</a></li>
           </div>
+
+          <div class="footer-content2 col-xs-12 col-sm-4">
+            <a href="#!/"><h3>{Code:Life Hub}</h3></a>
+            <div class="footer-links">
+              <a href="http://wwww.whitneylarios.com/">www.whitneylarios.com</a>
+              <div> © 2017 by Whitney Larios.</div>
+            </div>
+          </div>
+
+          <div class="footer-content3 col-xs-12 col-sm-4">
+            <ul class="social-list">
+              <li class="nav-element social-icon"><a ng-href="https://www.meetup.com/members/12632201/" target="_blank"><img src="images/meetupicon.png" class="meetup-icon"></a></li>
+              <li class="nav-element social-icon"><a ng-href="https://www.linkedin.com/in/whitney-larios-5b762011a?trk=nav_responsive_tab_profile_pic"  target="_blank"><img src="images/linkedin.png" class="linkedin-icon"></a></li>
+              <li class="nav-element social-icon"><a ng-href="https://twitter.com/lariosw_23" target="_blank"><img src="images/twitter.png" class="twitter-icon"></a></li>
+              <li class="nav-element social-icon"><a ng-href="https://github.com/lariosw" target="_blank"><img src="images/Octocat.png" class="github-icon"></a></li>
+            </ul>
+          </div>
+          </div>
+
 
         <!-- <div class="social-links">
           <ul>

@@ -1,0 +1,90 @@
+.main-section{
+  color: grey;
+  width:375px;
+  padding: 10px 20px;
+  background-color: white;
+  opacity: 0.8;
+  color: black;
+  margin-left: -40px;
+
+  .main-intro {
+    font-size: 40px;
+  }
+
+  .definition {
+    margin-left: 5px;
+  }
+  .lead {
+    font-size: 14px;
+    margin-left: 5px;
+  }
+  .definition-wrapper {
+    margin-left: -10px;
+    @media screen and (max-width: $break-small) {
+      width: 200px;
+      text-align: center;
+    }
+  }
+
+  .figure-container {
+    height: 400px;
+    width: 300px;
+    figure {
+      float: left;
+      height: 8em;
+      width: 8em;
+      margin: 8px;
+      -webkit-transform: perspective(500);
+      -webkit-transform-style: preserve-3d;
+      -webkit-transition: .5s;
+      img {
+        width: 8em;
+      }
+    }
+    figure:hover {
+      -webkit-transform: perspective(500) rotateX(90deg) translateY(-3em) translateZ(3em);
+    }
+    img {
+      background-color: #222;
+      box-shadow: 0 20px 15px -10px hsla(0, 0%, 0%, .25);
+      display: block;
+      height: 100%;
+      -webkit-transition: .5s;
+    }
+    figure:hover img {
+      box-shadow: none;
+    }
+    figcaption {
+      background-color: #222;
+      padding: 1.5em 1.5em 1.5em .25em;
+      -webkit-transform: rotateX(-90deg);
+      -webkit-transform-origin: 100% 0;
+      -webkit-transition: .5s;
+      a {
+        color: inherit;
+        text-align: center;
+      }
+    }
+    figure:hover figcaption {
+      box-shadow: 0 20px 15px -10px hsla(0, 0%, 0%, .25);
+    }
+    h3 {
+      font-weight: bold;
+    }
+  }
+
+
+  @media screen and (max-width: $break-medium) {
+    margin-left: -10px;
+    margin-top: 20px;
+    padding-top: 10px;
+  }
+
+  @media screen and (max-width: $break-small) {
+    width: 300px;
+    background-color: black;
+    color: white;
+    margin:66px auto !important;
+    padding-top: 10px;
+  }
+}

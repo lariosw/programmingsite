@@ -1,0 +1,65 @@
+.topics-container {
+  margin-top: 30px;
+  margin-left: 10px;
+  width: 100%;
+  background-color: white;
+  p {
+    width: 450px !important;
+  }
+  .title {
+    font-size: 50px;
+    width:100%;
+    margin: 0;
+    padding-left: 20px;
+    background-color: black;
+    color: white;
+    @media screen and (max-width: $break-small) {
+
+    }
+  }
+  .topics {
+    width: 100%;
+  }
+  .topics-keyword-search {
+    .keyword-box {
+      width: 40px;
+    }
+  }
+  .topics-header img {
+    height: 250px;
+    width: 100%;
+  }
+  .post-container {
+    margin:0 10px 10px 10px;
+    div.article {
+      color: black;
+      background-color: white;
+      padding-bottom: 10px;
+      height: 350px;
+
+      .article-title {
+        text-align: center;
+      }
+      .article-author {
+        text-align: center;
+      }
+      .article-description {
+        text-align: center;
+        margin-top: 15px;
+      }
+      .article-img {
+        height: 100px;
+        position: relative;
+        left: 50%;
+        img {
+          height: 100%;
+          position: relative;
+          margin-top: 5px;
+          left: -36%;
+          box-shadow: 5px 5px 2px #888888;
+
+        }
+      }
+    }
+  }
+}
