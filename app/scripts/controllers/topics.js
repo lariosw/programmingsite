@@ -45,7 +45,7 @@ angular.module('programmingsiteApp')
       $scope.filteredArticles = $scope.newsArticles.articles;
       $scope.currentArticlesKeyword = "";
       $scope.articlesKeyword = "";
-    }
+    };
 
     function doesArticlesMatchKeywords(article, keyword){
       if(keyword){

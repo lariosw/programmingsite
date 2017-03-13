@@ -1,12 +1,54 @@
-
-<div class="calendar-section">
-
+<section class="calendar-section">
   <div class="calendar-wrapper">
+    <h2 class="title text-center">{{ calendarTitle }}</h2>
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <div class="btn-group">
+          <button
+            class="btn btn-primary"
+            mwl-date-modifier
+            date="calendarState.viewDate"
+            decrement="calendarState.calendarView"
+            ng-click="calendarState.cellIsOpen = false">
+            Previous
+          </button>
+          <button
+            class="btn btn-default"
+            mwl-date-modifier
+            date="calendarState.viewDate"
+            set-to-today
+            ng-click="calendarState.cellIsOpen = false">
+            Today
+          </button>
+          <button
+            class="btn btn-primary"
+            mwl-date-modifier
+            date="calendarState.viewDate"
+            increment="calendarState.calendarView"
+            ng-click="calendarState.cellIsOpen = false">
+            Next
+          </button>
+        </div>
+      </div>
+      <br class="visible-xs visible-sm">
+
+      <div class="col-md-6 text-center">
+        <div class="btn-group">
+          <label class="btn btn-primary" ng-model="calendarState.calendarView" uib-btn-radio="'year'" ng-click="vm.cellIsOpen = false">Year</label>
+          <label class="btn btn-primary" ng-model="calendarState.calendarView" uib-btn-radio="'month'" ng-click="vm.cellIsOpen = false">Month</label>
+          <label class="btn btn-primary" ng-model="calendarState.calendarView" uib-btn-radio="'week'" ng-click="vm.cellIsOpen = false">Week</label>
+          <label class="btn btn-primary" ng-model="calendarState.calendarView" uib-btn-radio="'day'" ng-click="vm.cellIsOpen = false">Day</label>
+        </div>
+      </div>
+    </div>
     <mwl-calendar
       view="calendarState.calendarView"
-      view-date="calendarState.currentDate"
+      view-title="calendarTitle"
+      view-date="calendarState.viewDate"
+      on-event-click="eventClicked(calendarEvent)"
       events="calendarState.events">
     </mwl-calendar>
   </div>
-</div>
+
+</section>
 

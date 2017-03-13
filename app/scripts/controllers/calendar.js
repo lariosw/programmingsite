@@ -45,15 +45,19 @@ angular.module('programmingsiteApp')
         var newEvent = {
           title: muEvents[i].name,
           startsAt: new Date(muEvents[i].time),
-          endsAt: new Date(muEvents[i].time)
+          endsAt: new Date(muEvents[i].time),
+          url: muEvents[i].event_url
         };
         formattedEvents.push(newEvent);
         //end repeat
       }
-
-
       return formattedEvents;
     }
+
+    //handle event click on calendar
+    $scope.eventClicked = function(event) {
+      window.open(event.url);
+    };
   });
 
 
