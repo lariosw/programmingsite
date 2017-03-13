@@ -12,7 +12,8 @@ angular.module('programmingsiteApp')
     //calendar config defaults
     $scope.calendarState = {
       calendarView : "month",
-      currentDate : new Date(),
+      viewDate : new Date(),
+      cellIsOpen: true,
       events: []
     };
 
