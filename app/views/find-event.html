@@ -27,30 +27,42 @@
     </div>
   </div>
 
-
-
   <div class="row event-list-view">
     <div class="event-list-item col-xs-12 col-sm-6 col-md-4" ng-repeat="event in filteredEvents">
       <h4>{{event.name}}</h4>
       <h5>{{event.group.name}}</h5>
-      <div ng-init="myURL=event.event_url">
-        <a ng-href="{{myURL}}">View Event</a>
+      <a ng-click="showEventModal(event);">View Event</a>
+    </div>
+  </div>
+
+  <script type="text/ng-template" id="eventModalContent.html">
+    <div class="modal-header">
+      <h3 class="modal-title" id="modal-title">{{$ctrl.event.name}}</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+
+      <h5>{{$ctrl.event.group.name}}</h5>
+      <div >
+        <a ng-href="{{$ctrl.event.event_url}}">View Event</a>
       </div>
-      <strong><div>{{event.venue.name}}</div></strong>
-      <div>{{event.venue.address_1}}</div>
-      <div>{{event.venue.city}}</div><br>
-      <div>{{event.time | date:'MMM d, y h:mm a'}}</div>
+      <strong><div>{{$ctrl.event.venue.name}}</div></strong>
+      <div>{{$ctrl.event.venue.address_1}}</div>
+      <div>{{$ctrl.event.venue.city}}</div><br>
+      <div>{{$ctrl.event.time | date:'MMM d, y h:mm a'}}</div>
 
       <div class="event-description">
-        <div ng-app="myApp" ng controller="find-events">
-
-          Description <input type="checkbox" ng-model="description">
-          <div ng-show="description">
-            <h5 ng-bind-html="event.description"></h5>
+        <div>
+          Description
+          <div>
+            <h5 ng-bind-html="$ctrl.event.description"></h5>
           </div>
         </div>
       </div>
+
     </div>
-  </div>
+    <div class="modal-footer">
+      <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">CLOSE</button>
+    </div>
+  </script>
 
 </div>

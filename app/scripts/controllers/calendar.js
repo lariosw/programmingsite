@@ -41,12 +41,13 @@ angular.module('programmingsiteApp')
       var formattedEvents = [];
       var i;
       for (i=0; i < muEvents.length; i++) {
+        var eventUrlFieldName = "event_url";
         //repeat this for each event in muEvents
         var newEvent = {
           title: muEvents[i].name,
           startsAt: new Date(muEvents[i].time),
           endsAt: new Date(muEvents[i].time),
-          url: muEvents[i].event_url
+          url: muEvents[i][eventUrlFieldName]
         };
         formattedEvents.push(newEvent);
         //end repeat

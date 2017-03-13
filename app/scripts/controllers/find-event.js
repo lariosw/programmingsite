@@ -8,7 +8,7 @@
  * Controller of the programmingsiteApp
  */
 angular.module('programmingsiteApp')
-  .controller('FindEventCtrl', function($scope, events) {
+  .controller('FindEventCtrl', function($scope, $uibModal,  events) {
     //scope defaults
     $scope.searchKeyword ="";
     $scope.eventResults =[];
@@ -64,6 +64,22 @@ angular.module('programmingsiteApp')
       $scope.activeSearchEventDate = "";
     };
 
+    $scope.showEventModal = function(event){
+      $uibModal.open({
+        animation: true,
+        ariaLabelledBy: 'modal-title',
+        ariaDescribedBy: 'modal-body',
+        templateUrl: 'eventModalContent.html',
+        controller: 'ModalInstanceCtrl',
+        controllerAs: '$ctrl',
+        resolve: {
+          event: function () {
+            return event;
+          }
+        }
+      });
+    };
+
     function doesEventMatchKeywords(event, keyword){
         if(keyword){
           keyword = keyword.toLowerCase();
@@ -97,13 +113,17 @@ angular.module('programmingsiteApp')
       }
     }
 
-
-    //make HTML render from Json
-    /*var app = angular.module ("myApp", ['ngSanitize']);
-    app.controller("find-events", function ($scope, events){
-      $scope.myHTML =
-        events.description;
-    });*/
-
-
   });
+
+  // Controller for events modal
+  angular.module('programmingsiteApp')
+    .controller('ModalInstanceCtrl', function ($uibModalInstance, event) {
+      var $ctrl = this;
+
+      $ctrl.event = event;
+
+      $ctrl.ok = function () {
+        $uibModalInstance.close();
+      };
+  });
+
