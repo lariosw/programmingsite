@@ -5,17 +5,17 @@
       <h2 class="events-title">Events</h2>
       <div class="keyword-input-box col-xs-12 col-sm-12 col-md-4">
       <span>Search for events by keyword :</span><br>
-      <input type="text" ng-model="searchKeyword" placeholder="Keyword.."><br>
+      <input type="text" tabindex="1" ng-model="searchKeyword" placeholder="Keyword.."><br>
       </div>
 
       <div class="date-search col-xs-12 col-sm-12 col-md-4">
         <span>Search for events by date:</span><br>
         <datepicker class="datepicker-box" date-format="MM-dd-yyyy"  datepicker-mobile="false">
-          <input ng-model="searchEventDate" placeholder="Date.." type="text" readonly/>
+          <input tabindex="2" ng-model="searchEventDate" placeholder="Date.." type="text" readonly/>
         </datepicker>
       </div>
       <div  class="search-submit-btn col-xs-12 col-sm-12 col-md-4">
-        <input type="button" ng-click="search()" value="Submit">
+        <input tabindex="3" type="button" ng-click="search()" value="Submit">
         <input ng-show="activeSearchKeyword || activeSearchEventDate" type="button" ng-click="clearSearch()" value="Clear">
       </div>
     </div>
@@ -64,5 +64,15 @@
       <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">CLOSE</button>
     </div>
   </script>
+  </div>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
+    ga('create', 'UA-93489296-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
 </div>
