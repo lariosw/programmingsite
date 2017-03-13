@@ -20,7 +20,8 @@ angular
     'ngTouch',
     '720kb.datepicker',
     'mwl.calendar',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'ngAnimate'
   ])
 
   .config(function ($routeProvider, $sceDelegateProvider) {
