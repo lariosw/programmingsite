@@ -16,11 +16,12 @@
       </div>
       <div  class="search-submit-btn col-xs-12 col-sm-12 col-md-4">
         <input type="button" ng-click="search()" value="Submit">
+        <input ng-show="activeSearchKeyword || activeSearchEventDate" type="button" ng-click="clearSearch()" value="Clear">
       </div>
     </div>
 
 
-    <input ng-show="activeSearchKeyword || activeSearchEventDate" type="button" ng-click="clearSearch()" value="Clear">
+
     <div class="results-cnt" ng-if="activeSearchKeyword || activeSearchEventDate">
       <p class="lead lead-found">{{filteredEvents.length}} events found matching the search: {{activeSearchKeyword || activeSearchEventDate}}.</p>
     </div>

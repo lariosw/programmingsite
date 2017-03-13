@@ -10,9 +10,10 @@
 angular.module('programmingsiteApp')
   .controller('TopicsCtrl', function($scope, news) {
     //set defaults
-  $scope.newsArticles=[];
+    $scope.newsArticles=[];
     $scope.filteredArticles = [];
     $scope.articlesKeyword = "";
+    $scope.currentArticlesKeyword = "";
 
     //make call to api to get articles and by default set filtered articles to all articles
     $scope.newsArticles = news.find();
@@ -24,13 +25,7 @@ angular.module('programmingsiteApp')
     $scope.search = function(){
       var results=[];
       if(!$scope.articlesKeyword){
-        if($scope.filteredArticles.length === $scope.newsArticles.articles.length) {
-          window.alert('Please add keyword is required');
-        }
-        else {
-          $scope.filteredArticles = $scope.newsArticles.articles;
-        }
-
+        window.alert('Keyword is required');
         return;
       }
 
@@ -43,7 +38,14 @@ angular.module('programmingsiteApp')
         }
       }
       $scope.filteredArticles = results;
+      $scope.currentArticlesKeyword = $scope.articlesKeyword;
     };
+
+    $scope.clear = function() {
+      $scope.filteredArticles = $scope.newsArticles.articles;
+      $scope.currentArticlesKeyword = "";
+      $scope.articlesKeyword = "";
+    }
 
     function doesArticlesMatchKeywords(article, keyword){
       if(keyword){

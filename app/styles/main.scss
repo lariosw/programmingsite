@@ -5,6 +5,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 //global variables
 @import "variables";
+$nav-height: 75px;
+$footer-height: 150px;
 
 //Page Specific Styles
 @import "mainPage";
@@ -17,6 +19,31 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 //index styles
 body {
   background-image: url(../images/computer-background.jpg);
+  input[type=button]{
+    background-color: lightblue;
+    font-size: 20px;
+  }
+}
+
+//vision impaired nav skip
+.skip {
+  position: absolute;
+  top: -1000px;
+  left: -1000px;
+  height: 1px;
+  width: 1px;
+  text-align: left;
+  overflow: hidden;
+}
+
+a.skip:active,
+a.skip:focus,
+a.skip:hover {
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  overflow: visible;
 }
 
 ul.social-list {
@@ -47,45 +74,55 @@ ul.social-list {
     }
   }
 }
+
 //Nav Styles
-.navbar-content {
-  background-color: white;
-  .side-nav {
-    padding-top: 0;
+.nav-content {
+  position: relative;
+  height: $nav-height;
+  .title{
+    position: absolute;
+    top: 0;
+    left:0;
+    background-color: deepskyblue;
+    font-size: 30px;
+    padding: 15px 20px 0 20px;
+    height: $nav-height;
+  }
+  .social-list{
+    position: absolute;
+    top: 0;
+    right: 50px;
   }
 
-  ul {
-    .title-nav {
-      background-color: deepskyblue;
-      font-size: 30px;
-      margin-left: -40px;
-      line-height: 75px;
-      padding-top: 30px;
-      padding-bottom: 20px;
-      padding-left: 20px;
-      padding-right: 20px;
-      height: 75px !important;
+  .navbar{
+    height:$nav-height;
+    .container {
+      margin-left: 250px;
     }
+    .navbar-nav {
+      margin-top:28px;
+    }
+    .navbar-collapse{
+      position: relative;
+      z-index: 9000;
 
-    .home-nav {
-      margin-left: 50px;
-    }
-    .contact-nav {
-      margin-right: 50px;
+
+      @media screen and (max-width: $break-medium) {
+        background-color: white;
+      }
     }
   }
 }
 
+
 //Footer Styles
-.footer {
+.page-footer {
   padding-left: 15px;
   padding-right: 15px;
   color: black;
   background-color: lightblue !important;
-
-  @media screen and (max-width: $break-medium) {
-    padding: 10px 0 0 0 !important;
-  }
+  max-height:$footer-height;
+  overflow:hidden;
 
   .container {
     margin: 0 auto;
@@ -155,7 +192,7 @@ html {
 body {
   position: relative;
   margin: 0;
-  padding-bottom: 6rem;
+  padding-bottom: 150px;
   min-height: 100%;
 }
 .page-content {
@@ -163,13 +200,13 @@ body {
   max-width: 640px;
   width: 100%;
 }
-.footer {
+.page-footer {
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 30px;
   background-color: #efefef;
   text-align: center;
+  padding:30px;
 }
 /* END of footer code ********* */

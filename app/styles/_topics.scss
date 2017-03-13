@@ -1,6 +1,5 @@
 .topics-container {
   margin-top: 30px;
-  margin-left: 10px;
   width: 100%;
   background-color: white;
   p {
@@ -21,8 +20,9 @@
     width: 100%;
   }
   .topics-keyword-search {
-    .keyword-box {
-      width: 40px;
+    padding:10px;
+    input {
+      display:inline-block;
     }
   }
   .topics-header img {

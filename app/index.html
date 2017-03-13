@@ -27,7 +27,7 @@
     <![endif]-->
 
       <!-- <div class="side-nav-container"> !-->
-    <div class="navbar-content">
+    <!--<div class="navbar-content">
         <ul class="side-nav social-list">
           <li class="title-nav">{Code:Life Hub}</li>
           <li class="nav-element home-nav"><a href="#!/">Home</a></li>
@@ -40,13 +40,46 @@
           <li class="nav-element social-icon"><a ng-href="https://twitter.com/lariosw_23" target="_blank"><img src="images/twitter.png" class="twitter-icon"></a></li>
           <li class="nav-element social-icon"><a ng-href="https://github.com/lariosw" target="_blank"><img src="images/Octocat.png" class="github-icon"></a></li>
         </ul>
+    </div>-->
+    <a href="#content" class="skip">Skip to content</a>
+    <div class="nav-content" role=”banner”>
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li class="nav-element home-nav"><a href="#!/">Home</a></li>
+              <li class="nav-element"><a ng-href="#!/topics">Topics</a></li>
+              <li class="nav-element"><a ng-href="#!/find-event">Events</a></li>
+              <li class="nav-element"><a ng-href="#!/calendar">Calendar</a></li>
+              <li class="nav-element contact-nav"><a ng-href="#!/about">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="title">{Code:Life Hub}</div>
+      <ul class="social-list hidden-xs hidden-sm">
+        <li class="nav-element social-icon"><a ng-href="https://www.meetup.com/members/12632201/" target="_blank"><img src="images/meetupicon.png" class="meetup-icon"></a></li>
+        <li class="nav-element social-icon"><a ng-href="https://www.linkedin.com/in/whitney-larios-5b762011a?trk=nav_responsive_tab_profile_pic"  target="_blank"><img src="images/linkedin.png" class="linkedin-icon"></a></li>
+        <li class="nav-element social-icon"><a ng-href="https://twitter.com/lariosw_23" target="_blank"><img src="images/twitter.png" class="twitter-icon"></a></li>
+        <li class="nav-element social-icon"><a ng-href="https://github.com/lariosw" target="_blank"><img src="images/Octocat.png" class="github-icon"></a></li>
+      </ul>
     </div>
 
-    <div class="page-content">
-      <div ng-view=""></div>
+    <div id="content">
+      <div class="page-content">
+        <div ng-view=""></div>
+      </div>
     </div>
 
-    <div class="footer">
+    <div class="page-footer" role=”contentinfo”>
       <div class="container">
         <div class="row footer-content">
 

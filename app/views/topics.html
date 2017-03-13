@@ -7,13 +7,12 @@
       <div class="search keyword-box">
         <p>Search by keyword for tech news your interested in on Tech Crunch:</p>
         <div class="search keyword-search">
-          <form action="">
-            <input type="text" name="search" ng-model="articlesKeyword" placeholder="Keyword Search.."><br>
+            <input type="text" name="search" ng-model="articlesKeyword" placeholder="Keyword Search..">
             <input type="button" ng-click="search()" value="Submit">
-            <div class="results-cnt-topics" ng-if="articlesKeyword">
-              <p class="lead lead-found">{{filteredArticles.length}} articles found matching the search: {{articlesKeyword}}.</p>
+            <input type="button" ng-if="currentArticlesKeyword" ng-click="clear()" value="Clear">
+            <div class="results-cnt-topics" ng-if="currentArticlesKeyword">
+              <p class="lead lead-found">{{filteredArticles.length}} articles found matching the search: {{currentArticlesKeyword}}.</p>
             </div>
-          </form>
         </div>
       </div>
     </div>
@@ -23,7 +22,7 @@
   <div class="article col-xs-12 col-sm-6" ng-repeat="article in filteredArticles">
     <h4 class="article-title">{{article.title}} <br></h4>
     <div class="article-author"> By {{article.author}} <br> </div>
-    <div class="article-img"><img ng-src="{{article.urlToImage}}"/></div>
+    <div class="article-img"><img ng-src="{{article.urlToImage}}" alt="articleimage"/></div>
     <div class="article-description">{{article.description}}
       <div ng-init="topicUrl=article.url">
       <a ng-href="{{topicUrl}}" target="_blank">Read More</a></div>
@@ -31,9 +30,5 @@
 
 
   </div>
-
-  </div>
-  <div class="blog-container">
-
   </div>
 </div>
